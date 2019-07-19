@@ -60,7 +60,6 @@ class BurgerBuilder extends React.Component {
     const queryString = queryParams.join('&');
     // const queryString = queryParams.join('&')
 
-    console.log(queryString)
     this.props.history.push({
       pathname : '/checkout',
       search: queryString
@@ -125,7 +124,9 @@ class BurgerBuilder extends React.Component {
     if (this.state.ingredients){
       burger = (
         <Aux>
-          <Burger ingredients={this.state.ingredients} />
+          <div style={{width: "500px", margin: "0 auto"}}>
+            <Burger ingredients={this.state.ingredients} />
+          </div>
           <BurgerControls
             ingredientAdded={this.addIngredientHandler}
             ingredientRemoved={this.removeIngredientHandler}
